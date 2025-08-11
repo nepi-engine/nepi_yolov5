@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.5)
 project(nepi_yolov5)
 
 # Set c++11 cmake flags
@@ -12,7 +12,7 @@ set(YOLOV5_PATH ${CMAKE_CURRENT_SOURCE_DIR}/yolov5)
 set( YOLOV5_FILE_INSTALL_FOLDER
   # Must hard-code it because CATKIN_GLOBAL_SHARE_DESTINATION is not yet defined at this point
   # ${CATKIN_GLOBAL_SHARE_DESTINATION}/yolov5
-  /opt/nepi/ros/share/yolov5
+  /opt/nepi/engine/share/yolov5
 )
 message(WARNING "Installing yolov5 files to hard-coded ${YOLOV5_FILE_INSTALL_FOLDER}")
 add_definitions(-D YOLOV5_FILE_PATH="${YOLOV5_FILE_INSTALL_FOLDER}")
@@ -33,7 +33,7 @@ catkin_package(
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 set( YOLOV5_INSTALL_FOLDER 
   # Must hard-coded 
-  /opt/nepi/ros/share/yolov5
+  /opt/nepi/engine/share/yolov5
 )
 install(DIRECTORY   yolov5/
   DESTINATION ${YOLOV5_INSTALL_FOLDER}
